@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title>Document</title>
+		<link
+			href="https://fonts.googleapis.com/icon?family=Material+Icons"
+			rel="stylesheet"
+		/>
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+		/>
+		<link
+			href="https://fonts.googleapis.com/icon?family=Material+Icons"
+			rel="stylesheet"
+		/>
+		<link rel="stylesheet" href="assets/css/styles.css" />
+	</head>
+
+	<body>
+
+		<div class="navbar-fixed">
+			<nav>
+				<div class="nav-wrapper">
+					<a href="#!" class="brand-logo">Train Schedule</a>
+					<ul class="right hide-on-med-and-down">
+						<li><a href="#">Employee</a></li>
+						<li><a href="#">Customer</a></li>
+					</ul>
+				</div>
+			</nav>
+		</div>
+
+		<main>
+			<div class="container">
+				<div class="row">
+					<div id="table-div" class="col">
+						<table
+							id="train-schedule"
+							class="bordered striped responsive-table "
+						>
+							<thead>
+								<tr>
+									<th>Train Name</th>
+									<th>Destination</th>
+									<th>Frequency (min)</th>
+									<th>Next Arrival</th>
+									<th>Mins Away</th>
+								</tr>
+							</thead>
+							<tbody id="train-submit"></tbody>
+						</table>
+					</div>
+					<div id="form-div" class="col">
+						<form id="train-form" class="col">
+							<div class="row">
+								<div class="input-field col">
+									<input id="train-name" type="text" class="validate" />
+									<label for="train-name">Name</label>
+								</div>
+							</div>
+							<div class="row">
+								<div class="input-field col">
+									<input id="train-dest" type="text" class="validate" />
+									<label for="train-dest">Destination</label>
+								</div>
+							</div>
+							<div class="row">
+								<div class="input-field col">
+									<input id="train-first" type="time" class="validate" />
+									<label for="train-first">First Arrival</label>
+								</div>
+							</div>
+							<div class="row">
+								<div class="input-field col">
+									<input id="train-freq" type="number" class="validate" />
+									<label for="train-freq">Frequency (Min)</label>
+								</div>
+							</div>
+							<button
+								class="btn-large waves-effect waves-light row"
+								type="submit"
+								name="action"
+								id="submit-btn"
+							>
+								Submit
+								<i class="material-icons right">send</i>
+							</button>
+						</form>
+					</div>
+				</div>
+			</div>
+		</main>
+
+		<footer class="page-footer">
+			<div class="container"></div>
+		</footer>
+
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.24.0/babel.js"></script>
+		<script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/7.1.0/firebase-app.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/7.1.0/firebase-analytics.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/7.1.0/firebase-database.js"></script>
+		<script src="assets\javascript\firebase.js"></script>
+		<script src="assets/javascript/scripts.js"></script>
+	</body>
+</html>

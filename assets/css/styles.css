@@ -1,0 +1,57 @@
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+nav {
+    margin: 0 auto;
+    width: 100%;
+}
+
+main {
+    margin: 2% 0;
+    flex: 1 0 auto;
+
+}
+
+#table-div {
+    position: relative;
+    overflow-y: scroll;
+    position: relative;
+    height: 750px;
+    width: 80%;
+    overflow-x: hidden;
+    scrollbar-width: none;
+}
+
+::-webkit-scrollbar {
+    width: 0px;
+    background: transparent;
+}
+
+#form-div {
+    float: top;
+}
+
+table,
+form {
+    margin: 0 auto;
+    width: 100%;
+}
+
+
+
+.train-name {
+    max-width: 200px;
+}
+
+#train-form {
+    float: right;
+    position: relative;
+}
+
+footer {
+    height: 64px;
+}
