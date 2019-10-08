@@ -13,11 +13,6 @@ $(document).ready(function() {
 
 	var database = firebase.database();
 
-	var name = '';
-	var dest = '';
-	var freq = '';
-	var first = '';
-
 	$('#submit-btn').on('click', function(event) {
 		event.preventDefault();
 
@@ -59,7 +54,6 @@ $(document).ready(function() {
 			var firstConverted = moment(first, 'HH:mm').subtract(1, 'years');
 
 			var currentTime = moment();
-			console.log('CURRENT TIME: ' + moment(currentTime).format('hh:mm'));
 
 			var diffTime = moment().diff(moment(firstConverted), 'minutes');
 
@@ -76,28 +70,18 @@ $(document).ready(function() {
 					<td class="freq-disp">${childSnapshot.val().freq}</td>
 					<td class="next-disp">${nextTrain}</td>
 					<td class="mins-disp">${tMinutesTillTrain}</td>
-					<td><a class="waves-effect waves-light btn-small blue update-btn">Update</a></td>
-					<td><a class="waves-effect waves-light btn-small red delete-btn">Delete</a></td>
+					<td><a class="waves-effect waves-light btn-small blue update-btn">✎</a></td>
+					<td><a class="waves-effect waves-light btn-small red delete-btn">☓</a></td>
 				</tr>`
 			);
-			var timed = setInterval(function () {
-				$('.mins-disp').text(`${tMinutesTillTrain}`);
+
+			setTimeout(function() {
+				window.location.reload();
 			}, 60000);
 		},
 		function(errorObject) {
 			console.log('The read failed: ' + errorObject.code);
 		}
 	);
-
-	database
-		.ref()
-		.orderByChild('dateAdded')
-		.limitToLast(1)
-		.on('child_added', function(snapshot) {
-			$('#train-name').text(snapshot.val().name);
-			$('#train-dest').text(snapshot.val().dest);
-			$('#train-freq').text(snapshot.val().freq);
-		});
-
 
 });
